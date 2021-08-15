@@ -1,0 +1,232 @@
+/* Header */
+
+html {
+  min-height: 100vh;
+  background: linear-gradient(#f3f2c9 0%, #003638 100%);
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+/* Home */
+
+.title-box {
+  max-width: fit-content;
+  background: #003638;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgb(3, 3, 3);
+  
+}
+
+.title {
+  color: #f3f2c9;
+  letter-spacing: 2px;
+  font-size: 3.5rem;
+  padding: 20px 25px;
+}
+
+.box{
+    display: inline-block;
+    background: #055052;
+    margin: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
+.option{
+    font-size: 2rem;
+    color: #f3f2c9;
+    margin-bottom: 50px;
+}
+
+.title-form{
+    margin-bottom: 20px;
+}
+
+input{
+    display: block;
+    height: 40px;
+    width: 350px;
+    border-radius: 50px;
+    margin: 10px;
+    background-color: #f3f2c9;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
+textarea{
+    color: #003638;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    padding: 10px;
+    text-align: left;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #f3f2c9;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
+input::placeholder, textarea::placeholder{
+    font-size: 1.2rem;
+    color: #3a8c8f;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+input[type= "text"]{
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    color: #003638;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+}
+
+
+button{
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    cursor: pointer;
+    width: 70px;
+    border: none;
+    font-size: 1.5rem;
+    color: #003638;
+    background: #f3f2c9;
+    margin-top: 15px;
+    border-radius: 20px;
+    padding: 2px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
+/* Common CSS for both List and Notes */
+
+#list-title-box, #notes-title-box{
+    margin-bottom: 20px;
+}
+
+#list-title, #notes-title{
+    font-size: 2rem;
+}
+
+
+/* List */
+
+#list-box{
+    margin-top: 20px;
+}
+
+.item-box{
+    border: 1.5px solid #f3f2c9;
+    border-radius: 10px;
+    margin: 10px 5px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
+.item-name, .left-icon, .right-icon{
+    letter-spacing: 0.5px;
+    display: inline-block;
+    color: #f3f2c9;
+    font-size: 1.2rem;
+}
+
+.left-icon{    
+    background: none;
+    float: left;
+    width: 35px;
+    border: 2px solid #f3f2c9;
+    font-size: 1.2rem;
+    color:#055052;
+    margin-left: 5px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
+
+.right-icon{
+   
+   float: right;
+   background: none;
+    width: 35px;
+    border: 2px solid #f3f2c9;
+    font-size: 1.2rem;
+    color: #f3f2c9;
+    margin-right: 7px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
+.list-item{
+    width: 350px;
+    display: inline-block;
+}
+
+.add-item{
+    margin-right: 5px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
+
+.line{
+    margin: 20px 50px;
+}
+
+.clear, .home{
+
+    margin: 10px 20px 0px 20px;
+    padding: 7px 15px;
+    font-size: 1.2rem;
+    height: fit-content;
+    width: fit-content;
+}
+
+.visible{
+    color: #f3f2c9;
+}
+
+.strike{
+    text-decoration: line-through 3px rgb(100, 0, 0);
+}
+
+
+/* Notes */
+
+#notes-box{
+    margin: 20px auto;
+}
+
+.note-item{
+    height: 200px;
+    width: 800px;
+    margin: 15px;
+    display: block;
+}
+
+
+.clear, .home{
+
+    margin: 10px 20px 0px 20px;
+    padding: 7px 15px;
+    font-size: 1.2rem;
+    height: fit-content;
+    width: fit-content;
+}
+
+
+.note-content{
+    text-align: left;
+    color: #f3f2c9;
+    margin-left: 20px; 
+}
+
+/* Footer */
+
+footer{
+    margin-top: 50px;
+    color: #f3f2c9;
+}

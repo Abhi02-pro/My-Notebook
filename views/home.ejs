@@ -1,0 +1,24 @@
+<%- include("header") %> 
+
+<div class="title-box">
+    <h1 class="title">My Notebook</h1>
+</div>
+
+<div class="container">
+    <div class="box">
+        <h3 class="option">Create List</h3>
+        <form class="title-form" action="/list" method="POST">
+            <input type="text" name="list" placeholder="Enter Title for List" autocomplete="off" required>
+            <button type="submit" name="listTest" value="list">Go</button>
+        </form>
+    </div>
+    <div class="box">
+        <h3 class="option">Take Notes</h3>
+        <form class="title-form" action="/notes" method="POST">
+            <input type="text" name="notes" placeholder="Enter Title for Notes" autocomplete="off" required>
+            <button type="submit" name="notesTest" value="notes">Go</button>
+        </form>
+    </div>
+</div>
+
+<%- include("footer") %> 

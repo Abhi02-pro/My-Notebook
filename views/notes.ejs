@@ -1,0 +1,25 @@
+<%- include("header") %> 
+
+<div class="title-box" id="notes-title-box">
+    <h1 class="title" id="notes-title"><%= noteTitle %></h1>
+</div>
+
+<div class="box" id="notes-box">
+
+    <form action="/notes" method="POST">
+        <textarea class="note-item" name="newNote" placeholder="Enter New Note" required autofocus></textarea>
+        <button class="add-item" type="submit" name="addItem" value="addNewItem"> + </button>
+        <button class="clear" type="submit" name="clearAll" value="clear"> Clear Notes </button>
+        <button class="home" type="submit" name="goHome" value="home"> Home </button>       
+    </form>
+    <hr class="line">
+    <%  for(let i=0; i<notesItems.length; i++){  %>
+ 
+                <p class="note-content" id="itemName"><%=notesItems[i]%></p>
+                <hr class="line">
+    <% } %> 
+    
+</div>
+
+
+<%- include("footer") %> 

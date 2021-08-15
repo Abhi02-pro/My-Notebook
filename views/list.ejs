@@ -1,0 +1,39 @@
+<%- include("header") %> 
+
+<div class="title-box" id="list-title-box">
+    <h1 class="title" id="list-title"><%=listTitle%></h1>
+</div>
+<div class="box" id="list-box">
+
+    <form action="/list" method="POST">
+        <input class="list-item" type="text" name="newItem" placeholder="Enter New List Item" required autocomplete="off" autofocus>
+        <button class="add-item" type="submit" name="addItem" value="addNewItem"> + </button>
+    </form>
+    <form action="/list" method="POST">       
+        <button class="clear" type="submit" name="clearAll" value="clear"> Clear List </button>
+        <button class="home" type="submit" name="goHome" value="home"> Home </button>       
+    </form>
+    <hr class="line">
+    <%  for(let i=0; i<listItems.length; i++){  %>
+        <div class="item-box">
+            <!-- <form action="/list" method="post"></form> -->
+                <Button class="left-icon" id="tick" onclick="getTick()">✔</button>
+                <p class="item-name" id="itemName"><%=listItems[i]%></p>           
+                <button type="submit" class="right-icon" name="delete">✖</button>
+            <!-- </form> -->
+        </div>
+    <% } %> 
+    
+</div>
+
+<script>
+    function getTick(){
+        
+        var mark = document.getElementById("tick");
+        mark.classList.toggle("visible");
+
+        var itemName =  document.getElementById("itemName");
+        itemName.classList.toggle("strike");
+    }
+</script>
+<%- include("footer") %> 
