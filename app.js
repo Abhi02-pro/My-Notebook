@@ -25,23 +25,38 @@ app.get("/list", function(req, res){
 
 
 let newTitle = "";
+let iconId = 0;
 
 app.post("/list", function(req, res){
 
     if(req.body.listTest === "list"){
         list = [];
+        iconId=0;
         newTitle = req.body.list;
-    
     }
     else if(req.body.clearAll === "clear"){
         list = [];
+        iconId=0;
     }
     else if(req.body.goHome === "home"){
         res.redirect("/");
     }
     else if(req.body.addItem === "addNewItem"){
-        list.push(req.body.newItem); 
-     
+        const item = {
+            itemName: req.body.newItem,
+            iconId: iconId,
+        }
+        list.push(item); 
+        iconId++;
+    }
+    else if(req.body.delete >= 0){
+        let id = req.body.delete;
+        list.forEach(function(item){
+            if(item.iconId==id){
+                list.splice(list.indexOf(item), 1);
+            }
+            
+        })
     }
     res.redirect("/list");
 

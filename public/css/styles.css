@@ -82,7 +82,7 @@ input[type= "text"]{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-input:focus, textarea:focus{
+input:focus, textarea:focus, button:focus{
     outline: none;
 }
 
@@ -145,9 +145,13 @@ button{
     box-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
 
+.delete{
+    float: right;
+    margin: 0;
+    padding: 0;
+}
 
 .right-icon{
-   
    float: right;
    background: none;
     width: 35px;
@@ -230,3 +234,6 @@ footer{
     margin-top: 50px;
     color: #f3f2c9;
 }
+
+
+
