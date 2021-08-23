@@ -7,6 +7,8 @@ html {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
+
+
 /* Home */
 
 .title-box {
@@ -14,15 +16,26 @@ html {
   background: #003638;
   margin: 50px auto;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px rgb(3, 3, 3);
+  box-shadow: 0px 10px 20px rgb(0, 0, 0);
   
 }
 
-.title {
-  color: #f3f2c9;
-  letter-spacing: 2px;
-  font-size: 3.5rem;
-  padding: 20px 25px;
+.title{
+    margin-bottom: 0;
+    color: #f3f2c9;
+    letter-spacing: 2px;
+    font-size: 3.5rem;
+    padding: 15px 25px 0px;
+}
+
+#home-title{
+    padding-bottom: 20px;
+}
+
+.date{
+    word-spacing: 7px;
+    padding: 0px 25px 15px;
+    color: #f3f2c9;
 }
 
 .box{
@@ -31,7 +44,7 @@ html {
     margin: 50px;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    box-shadow: 0px 10px 20px rgb(0, 0, 0);
 }
 
 .option{
@@ -51,7 +64,7 @@ input{
     border-radius: 50px;
     margin: 10px;
     background-color: #f3f2c9;
-    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    box-shadow: 0px 10px 20px rgb(0, 0, 0);
 }
 
 textarea{
@@ -64,7 +77,7 @@ textarea{
     border-radius: 10px;
     margin: 10px;
     background-color: #f3f2c9;
-    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    box-shadow: 0px 10px 20px rgb(0, 0, 0);
 }
 
 input::placeholder, textarea::placeholder{
@@ -99,8 +112,15 @@ button{
     margin-top: 15px;
     border-radius: 20px;
     padding: 2px;
-    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    box-shadow: 0px 10px 20px rgb(0, 0, 0);
 }
+
+button:hover{
+    color: #f3f2c9;
+    background: #3a8c8f;
+}
+
+
 
 /* Common CSS for both List and Notes */
 
@@ -112,6 +132,28 @@ button{
     font-size: 2rem;
 }
 
+.line{
+    margin: 15px 50px;
+}
+
+.add-item{
+    margin-right: 5px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
+
+.clear, .home{
+
+    margin: 10px 20px 0px 20px;
+    padding: 7px 15px;
+    font-size: 1.2rem;
+    height: fit-content;
+    width: fit-content;
+}
+
+
 
 /* List */
 
@@ -120,10 +162,16 @@ button{
 }
 
 .item-box{
+    width: 400px;
     border: 1.5px solid #f3f2c9;
     border-radius: 10px;
     margin: 10px 5px;
-    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    box-shadow: 0px 10px 20px rgb(0, 0, 0);
+}
+
+#itemName{
+    width: 275px;
+    word-wrap: break-word;
 }
 
 .item-name, .left-icon, .right-icon{
@@ -142,7 +190,11 @@ button{
     color:#055052;
     margin-left: 5px;
     border-radius: 20px;
-    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    box-shadow: 0px 10px 20px rgb(0, 0, 0);
+}
+
+.left-icon:hover{
+    color: rgb(1, 44, 1);
 }
 
 .delete{
@@ -160,7 +212,11 @@ button{
     color: #f3f2c9;
     margin-right: 7px;
     border-radius: 20px;
-    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    box-shadow: 0px 10px 20px rgb(0, 0, 0);
+}
+
+.right-icon:hover{
+    color: rgb(100, 0, 0);
 }
 
 .list-item{
@@ -168,65 +224,43 @@ button{
     display: inline-block;
 }
 
-.add-item{
-    margin-right: 5px;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    display: inline-block;
-}
-
-.line{
-    margin: 20px 50px;
-}
-
-.clear, .home{
-
-    margin: 10px 20px 0px 20px;
-    padding: 7px 15px;
-    font-size: 1.2rem;
-    height: fit-content;
-    width: fit-content;
-}
 
 .visible{
     color: #f3f2c9;
 }
 
-.strike{
+.text-visible{
     text-decoration: line-through 3px rgb(100, 0, 0);
 }
+
 
 
 /* Notes */
 
 #notes-box{
-    margin: 20px auto;
+    margin: 30px auto;
 }
 
 .note-item{
     height: 200px;
     width: 800px;
-    margin: 15px;
+    margin: 10px;
     display: block;
 }
 
-
-.clear, .home{
-
-    margin: 10px 20px 0px 20px;
-    padding: 7px 15px;
-    font-size: 1.2rem;
-    height: fit-content;
-    width: fit-content;
-}
-
-
 .note-content{
+    width: 600px;
+    word-wrap: break-word;
     text-align: left;
     color: #f3f2c9;
     margin-left: 20px; 
 }
+
+#clearNotes, #notesToHome{
+    width: 120px;
+    margin-bottom: 5px;
+}
+
 
 /* Footer */
 

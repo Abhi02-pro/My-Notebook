@@ -13,7 +13,9 @@
 </script>
 
 <div class="title-box" id="list-title-box">
-    <h1 class="title" id="list-title"><%=listTitle%></h1>
+    <h2 class="title" id="list-title"><%=listTitle%></h2>
+    <hr class="line">
+    <h3 class="date"><%= date %></h3>
 </div>
 <div class="box" id="list-box"> 
 
@@ -34,10 +36,12 @@
         <% let list = listItems; %>
         
         <div class="item-box" id="box<%=listItems[i].iconId%>">
-            
-                <button class="left-icon" id="<%=listItems[i].iconId%>" onclick="getTick(this.id)">✔</button>
-                <p class="item-name" id="item<%=listItems[i].iconId%>"><%=listItems[i].itemName%></p>           
-                <form class="delete" action="/list" method="POST">
+
+                <form action="/list" method="POST">
+                    <button class="left-icon <%=listItems[i].complete%>"  name="tick" value="<%=listItems[i].iconId%>">✔</button>
+                </form>
+                <p class="item-name text-<%=listItems[i].complete%>" id="itemName"><%=listItems[i].itemName%></p>           
+                <form class="delete" action="/list" method="POST"></form>
                     <button class="right-icon" type="submit" name="delete" value="<%=listItems[i].iconId%>">✖</button>
                 </form>
                            

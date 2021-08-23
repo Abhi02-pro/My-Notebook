@@ -2,6 +2,8 @@
 
 <div class="title-box" id="notes-title-box">
     <h1 class="title" id="notes-title"><%= noteTitle %></h1>
+    <hr class="line">
+    <h3 class="date"><%= date %></h3>
 </div>
 
 <div class="box" id="notes-box">
@@ -9,13 +11,15 @@
     <form action="/notes" method="POST">
         <textarea class="note-item" name="newNote" placeholder="Enter New Note" required autofocus></textarea>
         <button class="add-item" type="submit" name="addItem" value="addNewItem"> + </button>
-        <button class="clear" type="submit" name="clearAll" value="clear"> Clear Notes </button>
-        <button class="home" type="submit" name="goHome" value="home"> Home </button>       
+    </form>               
+    <form class="notesForm" action="/notes" method="POST">       
+        
+        <button class="clear" id="clearNotes" type="submit" name="clearAll" value="clear"> Clear List </button>
+        <button class="home" id="notesToHome" type="submit" name="goHome" value="home"> Home </button>       
     </form>
     <hr class="line">
     <%  for(let i=0; i<notesItems.length; i++){  %>
- 
-                <p class="note-content" id="itemName"><%=notesItems[i]%></p>
+                <pre class="note-content" ><%=notesItems[i]%></pre>
                 <hr class="line">
     <% } %> 
     

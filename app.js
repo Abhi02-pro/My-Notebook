@@ -7,11 +7,14 @@ const app = express();
 let list = [];
 let notes = [];
 
+const date = new Date();
 
 app.use(bodyarser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
+
+// Home Page -> GET  Route
 
 app.get("/", function(req, res){
     res.render("home", {pageTitle: "Home"});
@@ -19,13 +22,20 @@ app.get("/", function(req, res){
 })
 
 
+// List Page -> GET  Route
+
 app.get("/list", function(req, res){
-    res.render("list", { listTitle: newTitle, pageTitle: "List", listItems: list});
+    res.render("list", { date: date.toDateString(), listTitle: newTitle.toUpperCase(), pageTitle: "List", listItems: list});
 })
 
 
+// variable declaration
+
 let newTitle = "";
 let iconId = 0;
+
+
+// List Page -> POST  Route
 
 app.post("/list", function(req, res){
 
@@ -45,6 +55,7 @@ app.post("/list", function(req, res){
         const item = {
             itemName: req.body.newItem,
             iconId: iconId,
+            complete: "invisible",
         }
         list.push(item); 
         iconId++;
@@ -58,15 +69,38 @@ app.post("/list", function(req, res){
             
         })
     }
+    else if(req.body.tick >= 0){   
+
+        let id = req.body.tick;
+
+        list.forEach(function(item){
+            if(item.iconId==id){
+                let value = item.complete;
+                if(value==="invisible"){
+                    item.complete = "visible";
+                }
+                else if(value==="visible"){
+                    item.complete = "invisible";
+                }      
+            }
+            
+        })
+        
+
+    }
     res.redirect("/list");
 
 })
 
 
+// Notes Page -> GET  Route
+
 app.get("/notes", function(req,res){
-    res.render("notes", { noteTitle: newTitle, pageTitle: "Notes", notesItems: notes});
+    res.render("notes", { date: date.toDateString(), noteTitle: newTitle.toUpperCase(), pageTitle: "Notes", notesItems: notes});
 })
 
+
+// Notes Page -> POST  Route
 
 app.post("/notes", function(req, res){
     if(req.body.notesTest === "notes"){
@@ -85,6 +119,8 @@ app.post("/notes", function(req, res){
     res.redirect("/notes");
 })
 
+
+// Listening to Local Server
 
 app.listen(3000, function(){
     console.log("Server running on port 3000...");
