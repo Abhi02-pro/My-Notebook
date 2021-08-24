@@ -41,7 +41,7 @@
                     <button class="left-icon <%=listItems[i].complete%>"  name="tick" value="<%=listItems[i].iconId%>">✔</button>
                 </form>
                 <p class="item-name text-<%=listItems[i].complete%>" id="itemName"><%=listItems[i].itemName%></p>           
-                <form class="delete" action="/list" method="POST"></form>
+                <form class="delete" action="/list" method="POST">
                     <button class="right-icon" type="submit" name="delete" value="<%=listItems[i].iconId%>">✖</button>
                 </form>
                            
