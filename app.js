@@ -93,6 +93,9 @@ app.post("/list", function(req, res){
 })
 
 
+
+let noteId = 0;
+
 // Notes Page -> GET  Route
 
 app.get("/notes", function(req,res){
@@ -106,19 +109,72 @@ app.post("/notes", function(req, res){
     if(req.body.notesTest === "notes"){
         notes = [];
         newTitle = req.body.notes;
+        noteId = 0;
     }
     else if(req.body.clearAll === "clear"){
         notes = [];
+        noteId = 0;
     }
     else if(req.body.goHome === "home"){
         res.redirect("/");
     }
     else if(req.body.addItem === "addNewItem"){
-        notes.push(req.body.newNote); 
+        const note={
+            heading: req.body.heading,
+            content: req.body.newNote,
+            noteId: noteId,
+        }
+        notes.push(note); 
+        noteId++;
     }
+    else if(req.body.delete >= 0){
+        let id = req.body.delete;
+        notes.forEach(function(note){
+            if(note.noteId == id){
+                notes.splice(notes.indexOf(note), 1)              
+            }
+        })
+    }
+
     res.redirect("/notes");
 })
 
+
+
+// Read Page -> GET Route
+
+app.get("/read", function(req, res){
+    res.render("read", { date: date.toDateString(), heading: heading.toUpperCase(), pageTitle: "Read", content: content});
+})
+
+
+// Read Page -> GET Route
+
+app.post("/read", function(req, res){
+
+    if(req.body.read >= 0){
+
+        let id = req.body.read;
+
+        notes.forEach(function(note){
+            if(note.noteId == id){
+                heading = note.heading;
+                content = note.content;                
+            }
+        })
+    }
+
+    else if(req.body.getNotes === "getNotes"){
+        res.redirect("/notes");
+    }
+
+    else if(req.body.goHome === "home"){
+        res.redirect("/");
+    }
+    
+    res.redirect("/read");
+    
+})
 
 // Listening to Local Server
 

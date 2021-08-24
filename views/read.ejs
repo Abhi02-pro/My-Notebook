@@ -1,0 +1,24 @@
+<%- include("header") %>
+
+<div class="title-box" id="notes-title-box">
+    <h1 class="title" id="notes-title">
+        <%= heading %>
+    </h1>
+    <hr class="line">
+    <h3 class="date">
+        <%= date %>
+    </h3>
+</div>
+
+<div class="box read">
+    <p class="content" id="content">
+        <%= content %>
+    </p> 
+</div>
+
+<form class="notesForm" action="/read" method="POST">
+    <button class="clear" type="submit" name="getNotes" value="getNotes"> Notes </button>
+    <button class="home" type="submit" name="goHome" value="home"> Home </button>
+</form>
+
+<%- include("footer") %>

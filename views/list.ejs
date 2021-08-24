@@ -1,17 +1,5 @@
 <%- include("header") %> 
 
-<script>
-
-    function getTick(id){
-        var mark = document.getElementById(id);
-        mark.classList.toggle("visible");
-
-        var itemName =  document.getElementById("item"+id);
-        itemName.classList.toggle("strike");
-    }
-
-</script>
-
 <div class="title-box" id="list-title-box">
     <h2 class="title" id="list-title"><%=listTitle%></h2>
     <hr class="line">
@@ -41,7 +29,7 @@
                     <button class="left-icon <%=listItems[i].complete%>"  name="tick" value="<%=listItems[i].iconId%>">✔</button>
                 </form>
                 <p class="item-name text-<%=listItems[i].complete%>" id="itemName"><%=listItems[i].itemName%></p>           
-                <form class="delete" action="/list" method="POST"></form>
+                <form class="delete" action="/list" method="POST">
                     <button class="right-icon" type="submit" name="delete" value="<%=listItems[i].iconId%>">✖</button>
                 </form>
                            

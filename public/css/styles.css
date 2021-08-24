@@ -146,11 +146,11 @@ button:hover{
 
 .clear, .home{
 
-    margin: 10px 20px 0px 20px;
+    margin: 10px 20px 5px 20px;
     padding: 7px 15px;
     font-size: 1.2rem;
     height: fit-content;
-    width: fit-content;
+    width: 130px;
 }
 
 
@@ -241,26 +241,72 @@ button:hover{
     margin: 30px auto;
 }
 
+.heading{
+    margin: 10px auto;
+}
+
 .note-item{
     height: 200px;
-    width: 800px;
+    min-width: 800px;
     margin: 10px;
     display: block;
 }
 
-.note-content{
-    width: 600px;
-    word-wrap: break-word;
+.note-container{
+    border: 1.5px solid #f3f2c9;
+    border-radius: 10px;
+    margin: 15px 30px;
+    box-shadow: 0px 10px 20px rgb(0, 0, 0);
     text-align: left;
-    color: #f3f2c9;
-    margin-left: 20px; 
+    padding: 5px 5px 5px 25px;
 }
 
-#clearNotes, #notesToHome{
+.note-heading{
+   
+    width: 550px;
+    word-wrap: break-word;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f3f2c9
+}
+
+.note-content{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 550px;
+    word-wrap: break-word;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f3f2c9; 
+}
+
+.readNote, .deleteNote{
+    margin: 10px 30px;
+    padding: 7px 15px;
+    font-size: 1.2rem;
+    height: fit-content;
     width: 120px;
-    margin-bottom: 5px;
 }
 
+.read{
+    color: #f3f2c9;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 800px;
+    text-align: left;
+}
+
+
+.content{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    margin: 10px;
+    line-height: 30px;
+}
+
+.redirect{
+    margin-top: 20px;
+    display: inline-block;
+}
 
 /* Footer */
 
